@@ -7,15 +7,19 @@
  *  3. Run iisreset /start
  */
 
+// PI Dev Club RSS https://pisquare.osisoft.com/community/feeds/allcontent?community=2004&showProjectContent=false&recursive=true
+
 (function (CS) {
     function symbolVis() { }
     CS.deriveVisualizationFromBase(symbolVis);
 
     // Intiializer
     symbolVis.prototype.init = function (scope) {
-        this.onDataUpdate = dataUpdate;
+        // Load RSS feed
         
+
         // Do this every data update
+        this.onDataUpdate = dataUpdate;
         function dataUpdate(data) {
             if (data) {
                 // Add variables to angular scope
