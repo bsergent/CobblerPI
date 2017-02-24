@@ -1,5 +1,5 @@
-<div style="background: darkblue; color: white;">
-    <div>{{label}}</div>
+<div ng-style="{background: config.BackgroundColor, color: MultistateColor || config.TextColor}">
+    <div ng-show="config.ShowLabel">{{label}}</div>
     <div>{{value}}</div>
-    <div>{{time}}</div>
+    <div ng-show="config.ShowTime">{{time}}</div>
 </div>
