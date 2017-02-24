@@ -24,4 +24,4 @@
         }
     };
     CS.symbolCatalog.register(definition);
-})(window.Coresight);
+})(window.Coresight); // Ben's test comment
