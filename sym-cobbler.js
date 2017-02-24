@@ -36,9 +36,12 @@
             return {
                 DataShape: 'Value',
                 Height: 150,
-                Width: 150
+                Width: 150,
+                BackgroundColor: 'rgb(255,0,0)',
+                TextColor: 'rgb(0,255,0)'
             }
-        }
+        },
+        configTitle: 'Format Symbol' // Creates context menu for editing the config
     };
     CS.symbolCatalog.register(definition);
 })(window.Coresight);
