@@ -25,3 +25,7 @@
     };
     CS.symbolCatalog.register(definition); // Another comment by ben
 })(window.Coresight); // Ben's test comment
+
+
+/* Isaac test comment */
+
