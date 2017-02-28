@@ -13,18 +13,21 @@
     function symbolVis() { }
     CS.deriveVisualizationFromBase(symbolVis);
 
+    var context = $('#context')[0].getContext('3d');
+
     // Intiializer
     symbolVis.prototype.init = function (scope) {
-        // Load RSS feed
-        
 
         // Do this every data update
         this.onDataUpdate = dataUpdate;
         function dataUpdate(data) {
+            //context.rect();
+            //context.fill();
+
             if (data) {
                 // Add variables to angular scope
-                scope.value = data.Value;
-                scope.time = data.Time;
+                //scope.value = data.Value;
+                //scope.time = data.Time;
                 if (data.Label) {
                     scope.label = data.Label;
                 }
@@ -51,4 +54,4 @@
         StateVariables: [ 'MultistateColor' ]
     };
     CS.symbolCatalog.register(definition);
-})(window.Coresight);
+})(window.PIVisualization);
