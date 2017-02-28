@@ -7,8 +7,6 @@
  *  3. Run iisreset /start
  */
 
-// PI Dev Club RSS https://pisquare.osisoft.com/community/feeds/allcontent?community=2004&showProjectContent=false&recursive=true
-
 (function (CS) {
     function symbolVis() { }
     CS.deriveVisualizationFromBase(symbolVis);
