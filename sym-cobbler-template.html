@@ -1,6 +1,9 @@
-<div ng-style="{background: config.BackgroundColor, color: MultistateColor || config.TextColor}">
-    <div ng-show="config.ShowLabel">{{label}}</div>
+<div ng-style="{
+            background: config.BackgroundColor,
+            color: MultistateColor || config.TextColor
+        }" style="width:100%; height:100%; display:table;">
+    <div ng-show="config.ShowLabel" style="display:table-row;">{{label}}</div>
     <!--<div>{{value}}</div>
     <div ng-show="config.ShowTime">{{time}}</div>-->
-    <canvas id="cobblerCanvas">This extension requires HTML5 and Javascript to be enabled.</canvas>
+    <canvas id="cobblerCanvas" width="470px" style="display:table-row; width:100%; height:auto; margin:0px; border:1px solid limegreen;">This extension requires HTML5 and Javascript to be enabled.</canvas>
 </div>
