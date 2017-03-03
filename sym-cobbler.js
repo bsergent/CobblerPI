@@ -21,14 +21,14 @@
     // Intializer
     symbolVis.prototype.init = function (scope) {
 
-        canvas = $('#cobblerCanvas');
-        context = canvas[0].getContext('2d');
+        //canvas = $('#cobblerCanvas');
+        //context = canvas[0].getContext('2d');
 
         // Do this every data update (every 5s)
         this.onDataUpdate = function (data) {
             updateScale(); // TODO This should be in a resize listener in case data is frozen
             var color = [];
-            for (var y = 0; y < dataHeight; y++) {
+            /*for (var y = 0; y < dataHeight; y++) {
                 for (var x = 0; x < dataWidth; x++) {
                     // Boxes
                     for (var c = 0; c < 3; c++) color[c] = Math.round(Math.random() * 9);
@@ -46,7 +46,7 @@
                     context.fillText(color[0] + color[1] + color[2], (x * scaleX) + (scaleX / 3), (y * scaleY) + (scaleY * 2.5 / 4));
                     context.closePath();
                 }
-            }
+            }*/
 
             if (data) {
                 // Add variables to angular scope
@@ -59,13 +59,13 @@
         }
         
         function updateScale() {
-            canvas.attr('width', canvas.width());
+            /*canvas.attr('width', canvas.width());
             canvas.attr('height', canvas.height());
             scaleX = canvas.width() / dataWidth;
             scaleY = canvas.height() / dataHeight;
             scaleX = Math.floor(scaleX);
             scaleY = Math.floor(scaleY);
-            console.log('canvasWidth (' + canvas.width() + ') / dataWidth (' + dataWidth + ') = scaleX (' + scaleX + ')');
+            console.log('canvasWidth (' + canvas.width() + ') / dataWidth (' + dataWidth + ') = scaleX (' + scaleX + ')');*/
         }
     };
 
