@@ -78,8 +78,29 @@
                         if (point[1] < minValue) minValue = point[1];
                     });
                 });
-                // Draw
+                // New Draw
+                var independent = [];
                 var drawnX;
+                var drawnY;
+                series.forEach(function (set, index) {
+                    if (index == 0) {
+                        // Set the first series as independent variable
+                        set.data.forEach(function (point, pointIndex) {
+                            independent.push(point[1]);
+                        });
+                    } else {
+                        // Set the rest of the series as dependent variables in varying colors
+                        set.data.forEach(function (point, pointIndex) {
+                            drawnX = (independent[pointIndex]-minTime)/(maxTime-minTime)*symbolWidth;
+                            drawnY = (symbolHeight)-(point[1]-minValue)/(maxValue-minValue)*symbolHeight;
+                            console.log('<circle cx="'+drawnX+'" cy="'+drawnY+'" r="3" fill="'+seriesColors[index]+'"/>');
+                            svg.appendChild(parseSVG('<circle cx="'+drawnX+'" cy="'+drawnY+'" r="3" fill="'+seriesColors[index]+'"/>'));
+                        });
+                    }
+                });
+
+                // Legacy Draw
+                /*var drawnX;
                 var drawnY;
                 series.forEach(function (set, index) {
                     set.data.forEach(function (point, pointIndex) {
@@ -89,7 +110,7 @@
                         console.log('<circle cx="'+drawnX+'" cy="'+drawnY+'" r="3" fill="'+seriesColors[index]+'"/>');
                         svg.appendChild(parseSVG('<circle cx="'+drawnX+'" cy="'+drawnY+'" r="3" fill="'+seriesColors[index]+'"/>'));
                     });
-                });
+                });*/
                 // Add variables to angular scope
                 //scope.value = data.Value;
                 //scope.time = data.Time;
